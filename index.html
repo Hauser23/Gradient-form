@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign in or create an account to continue."
+    />
+    <title>Sign in</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="auth-screen">
+      <section class="auth-panel" aria-labelledby="auth-title">
+        <button id="back-button" class="back-button" type="button" aria-label="Go back">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path
+              d="M12.5 15L7.5 10L12.5 5"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.7"
+            />
+          </svg>
+        </button>
+
+        <header class="auth-header">
+          <h1 id="auth-title">
+            <span id="mode-title">Sign in</span>
+            <span class="mode-divider" aria-hidden="true">/</span>
+            <button id="mode-toggle" class="mode-toggle" type="button">
+              Sign up
+            </button>
+          </h1>
+          <p id="auth-description">Fill the form to sign into account</p>
+        </header>
+
+        <form id="auth-form" novalidate>
+          <div class="fields">
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                value="yaq"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+                minlength="8"
+                required
+              />
+              <button
+                id="password-toggle"
+                class="password-toggle"
+                type="button"
+                aria-label="Show password"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <path
+                    d="M342.95 415.95C341.525 417.036 339.791 417.637 338 417.666C332.167 417.666 328.833 411 328.833 411C329.87 409.068 331.308 407.38 333.05 406.05M336.25 404.533C336.824 404.399 337.411 404.332 338 404.333C343.833 404.333 347.167 411 347.167 411C346.661 411.946 346.057 412.837 345.367 413.658M339.767 412.766C339.143 413.435 338.205 413.711 337.319 413.484C336.433 413.258 335.742 412.566 335.515 411.681C335.289 410.795 335.564 409.856 336.233 409.233"
+                    transform="translate(-328 -401)"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.66667"
+                  />
+                  <path
+                    d="M328.833 401.833L347.167 420.166"
+                    transform="translate(-328 -401)"
+                    fill="none"
+                    stroke="currentColor"
+                    class="eye-slash"
+                    stroke-width="1.66667"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <a id="forgot-password" href="#forgot-password">Forgot password</a>
+            <label class="remember-option" for="remember">
+              <input id="remember" name="remember" type="checkbox" checked />
+              <span class="switch" aria-hidden="true"></span>
+              <span>Remember</span>
+            </label>
+          </div>
+
+          <button class="submit-button" type="submit">
+            <span id="submit-label">Sign In</span>
+          </button>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+
+        <div class="social-section">
+          <div class="separator">
+            <span>Or continue with</span>
+          </div>
+          <div class="social-buttons" aria-label="Social sign-in options">
+            <button
+              class="social-button"
+              type="button"
+              aria-label="Continue with Facebook"
+              data-provider="Facebook"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  transform="translate(-127 -687)"
+                  d="M137 687.06C131.5 687.06 127 691.56 127 697.06C127 702 130.61 706.12 135.33 706.95L135.39 706.9H135.33V699.84H132.83V697.06H135.33V694.84C135.33 692.34 136.94 690.95 139.22 690.95C139.94 690.95 140.72 691.06 141.44 691.17V693.73H140.16C138.94 693.73 138.66 694.34 138.66 695.12V697.06H141.33L140.89 699.84H138.67V706.9H138.61L138.67 706.95C143.39 706.12 147 702.01 147 697.06C147 691.56 142.5 687.06 137 687.06Z"
+                />
+              </svg>
+            </button>
+            <button
+              class="social-button"
+              type="button"
+              aria-label="Continue with Facebook"
+              data-provider="Facebook"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  transform="translate(-127 -687)"
+                  d="M137 687.06C131.5 687.06 127 691.56 127 697.06C127 702 130.61 706.12 135.33 706.95L135.39 706.9H135.33V699.84H132.83V697.06H135.33V694.84C135.33 692.34 136.94 690.95 139.22 690.95C139.94 690.95 140.72 691.06 141.44 691.17V693.73H140.16C138.94 693.73 138.66 694.34 138.66 695.12V697.06H141.33L140.89 699.84H138.67V706.9H138.61L138.67 706.95C143.39 706.12 147 702.01 147 697.06C147 691.56 142.5 687.06 137 687.06Z"
+                />
+              </svg>
+            </button>
+            <button
+              class="social-button"
+              type="button"
+              aria-label="Continue with Facebook"
+              data-provider="Facebook"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path
+                  fill="currentColor"
+                  transform="translate(-127 -687)"
+                  d="M137 687.06C131.5 687.06 127 691.56 127 697.06C127 702 130.61 706.12 135.33 706.95L135.39 706.9H135.33V699.84H132.83V697.06H135.33V694.84C135.33 692.34 136.94 690.95 139.22 690.95C139.94 690.95 140.72 691.06 141.44 691.17V693.73H140.16C138.94 693.73 138.66 694.34 138.66 695.12V697.06H141.33L140.89 699.84H138.67V706.9H138.61L138.67 706.95C143.39 706.12 147 702.01 147 697.06C147 691.56 142.5 687.06 137 687.06Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

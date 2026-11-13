@@ -17,6 +17,16 @@ function showMessage(message) {
   formMessage.textContent = message;
 }
 
+function animateBackground(provider) {
+  document.body.dataset.background = provider;
+  const animation = document.body
+    .getAnimations({ subtree: true })
+    .find((item) => item.animationName === "gradient-flow");
+  if (animation) {
+    animation.currentTime = 0;
+  }
+}
+
 function clearValidation() {
   authForm.querySelectorAll("input").forEach((input) => {
     input.removeAttribute("aria-invalid");
@@ -59,6 +69,7 @@ passwordToggle.addEventListener("click", () => {
 
 authForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  animateBackground("default");
   showMessage("");
   clearValidation();
 
@@ -91,6 +102,7 @@ forgotPassword.addEventListener("click", (event) => {
 
 document.querySelectorAll(".social-button").forEach((button) => {
   button.addEventListener("click", () => {
+    animateBackground(button.dataset.provider);
     showMessage(`${button.dataset.provider} sign-in is not connected yet.`);
   });
 });

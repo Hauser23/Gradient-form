@@ -320,10 +320,6 @@ input {
   box-shadow: 0 0 0 3px rgb(255 255 255 / 20%);
 }
 
-.field:has(input[aria-invalid="true"]) {
-  border-color: #8d1717;
-}
-
 #password {
   padding-right: 48px;
 }
@@ -458,16 +454,8 @@ input {
   transform: scale(0.99);
 }
 
-.form-message {
-  min-height: 18px;
-  margin: 6px 0 0;
-  color: #fff;
-  font-size: 12px;
-  text-align: center;
-}
-
 .social-section {
-  margin-top: 12px;
+  margin-top: 36px;
 }
 
 .separator {
@@ -574,7 +562,7 @@ input {
   }
 
   .social-section {
-    margin-top: 10px;
+    margin-top: 34px;
   }
 
   .social-buttons {
@@ -629,7 +617,7 @@ input {
   }
 
   .social-section {
-    margin-top: 5px;
+    margin-top: 29px;
   }
 
   .social-buttons {

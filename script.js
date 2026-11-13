@@ -8,14 +8,9 @@ const submitLabel = document.querySelector("#submit-label");
 const forgotPassword = document.querySelector("#forgot-password");
 const passwordInput = document.querySelector("#password");
 const passwordToggle = document.querySelector("#password-toggle");
-const formMessage = document.querySelector("#form-message");
 const backButton = document.querySelector("#back-button");
 
 let isSignUp = false;
-
-function showMessage(message) {
-  formMessage.textContent = message;
-}
 
 function animateBackground(provider) {
   document.body.dataset.background = provider;
@@ -45,7 +40,6 @@ function setMode(signUp) {
     ? "Create an account to get started"
     : "Fill the form to sign into account";
   submitLabel.textContent = signUp ? "Sign Up" : "Sign In";
-  showMessage("");
   clearValidation();
 }
 
@@ -70,7 +64,6 @@ passwordToggle.addEventListener("click", () => {
 authForm.addEventListener("submit", (event) => {
   event.preventDefault();
   animateBackground("default");
-  showMessage("");
   clearValidation();
 
   if (!authForm.checkValidity()) {
@@ -79,30 +72,21 @@ authForm.addEventListener("submit", (event) => {
         input.setAttribute("aria-invalid", "true");
       }
     });
-    authForm.reportValidity();
-    return;
   }
-
-  showMessage(
-    "This is a demo interface. Connect an authentication service to continue.",
-  );
 });
 
 authForm.addEventListener("input", (event) => {
   if (event.target instanceof HTMLInputElement) {
     event.target.removeAttribute("aria-invalid");
-    showMessage("");
   }
 });
 
 forgotPassword.addEventListener("click", (event) => {
   event.preventDefault();
-  showMessage("Password reset is not connected yet.");
 });
 
 document.querySelectorAll(".social-button").forEach((button) => {
   button.addEventListener("click", () => {
     animateBackground(button.dataset.provider);
-    showMessage(`${button.dataset.provider} sign-in is not connected yet.`);
   });
 });
